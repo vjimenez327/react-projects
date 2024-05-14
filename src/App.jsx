@@ -6,6 +6,8 @@ import ColorChanger from './components/ColorChanger'
 // import SearchAutocomplete from './components/search-autocomplete'
 import ImageSlider from './components/ImageSlider'
 import LoadMoreData from './components/LoadMoreData'
+import TreeView from './components/TreeView'
+import menus from './components/TreeView/data'
 
 function App() {
 
@@ -18,9 +20,10 @@ function App() {
           <SearchAutocomplete />
           ---- NEED TO CREATE AGAIN
 
-        <ImageSlider url={`https://picsum.photos/v2/list`} limit={'7'} page={'10'}/>
+          <ImageSlider url={`https://picsum.photos/v2/list`} limit={'7'} page={'10'}/>
+          <LoadMoreData />
         */}
-        <LoadMoreData />
+        <TreeView menus={menus}/>
       </div>
     </>
   )

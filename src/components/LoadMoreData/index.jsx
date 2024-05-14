@@ -16,10 +16,9 @@ export default function LoadMoreData(){
       const data = await response.json()
 
       if(data && data.products && data.products.length) {
-        setProducts((prevData) => [...prevData, ...data.products])
+        setProducts(() => [...products, ...data.products])
         setLoading(false)
       }
-
     } catch(e) {
       console.error(e.message)
       setLoading(false)

@@ -14,9 +14,24 @@
   border: 1px solid;
   flex-direction: column;
   gap: 15px;
+  text-align: center;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .product img {
   height: 200px;
   width: 200px;
+}
+
+.load-more {
+  margin: 0 auto 20px;
+}
+
+button {
+  height: 48px;
+  width: 200px;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 30px;
+  cursor: pointer;
 }
