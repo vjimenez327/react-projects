@@ -1,13 +1,15 @@
 
 import './App.css'
-import GitHubProfileFinder from './components/GithubFinder'
-import Accordian from './components/Accordian'
-import ColorChanger from './components/ColorChanger'
-// import SearchAutocomplete from './components/search-autocomplete'
-import ImageSlider from './components/ImageSlider'
-import LoadMoreData from './components/LoadMoreData'
-import TreeView from './components/TreeView'
-import menus from './components/TreeView/data'
+import GitHubProfileFinder from './components/GithubFinder';
+import Accordian from './components/Accordian';
+import ColorChanger from './components/ColorChanger';
+// import SearchAutocomplete from './components/search-autocomplete';
+import ImageSlider from './components/ImageSlider';
+import LoadMoreData from './components/LoadMoreData';
+import TreeView from './components/TreeView';
+import menus from './components/TreeView/data';
+import QRCodeGenerator from './components/QRGenerator'; 
+
 
 function App() {
 
@@ -22,8 +24,10 @@ function App() {
 
           <ImageSlider url={`https://picsum.photos/v2/list`} limit={'7'} page={'10'}/>
           <LoadMoreData />
+          <TreeView menus={menus}/>
         */}
-        <TreeView menus={menus}/>
+        <QRCodeGenerator />
+        
       </div>
     </>
   )
