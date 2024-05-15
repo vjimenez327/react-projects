@@ -9,7 +9,8 @@ import LoadMoreData from './components/LoadMoreData';
 import TreeView from './components/TreeView';
 import menus from './components/TreeView/data';
 import QRCodeGenerator from './components/QRGenerator'; 
-
+import LightDarkMode from './components/LightDarkMode'
+import ScrollIndicator from './components/ScrollIndicator'
 
 function App() {
 
@@ -25,9 +26,10 @@ function App() {
           <ImageSlider url={`https://picsum.photos/v2/list`} limit={'7'} page={'10'}/>
           <LoadMoreData />
           <TreeView menus={menus}/>
-        */}
         <QRCodeGenerator />
-        
+          <LightDarkMode />
+        */}
+        <ScrollIndicator url={'https://dummyjson.com/products?limit=100'} />
       </div>
     </>
   )
