@@ -3,7 +3,7 @@ import './App.css'
 import GitHubProfileFinder from './components/GithubFinder'
 import Accordian from './components/Accordian'
 import ColorChanger from './components/ColorChanger'
-// import SearchAutocomplete from './components/search-autocomplete'
+import SearchAutocomplete from './components/SearchAutocomplete'
 import ImageSlider from './components/ImageSlider'
 import LoadMoreData from './components/LoadMoreData'
 import TreeView from './components/TreeView'
@@ -26,8 +26,9 @@ function App() {
           <LoadMoreData />
           <TreeView menus={menus}/>
           <LightDarkMode />
+          <ScrollIndicator url={'https://dummyjson.com/products?limit=100'} />
         */}
-        <ScrollIndicator url={'https://dummyjson.com/products?limit=100'} />
+        <SearchAutocomplete />
       </div>
     </>
   )
