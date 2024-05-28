@@ -3,13 +3,13 @@
   flex-direction: column;
   gap: 20px
 }
-.product-container{
+.product-container-grid{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 
-.product {
+.product-thing {
   padding: 20px;
   border: 1px solid;
   flex-direction: column;
@@ -18,10 +18,10 @@
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.product img {
+/* .product img {
   height: 200px;
   width: 200px;
-}
+} */
 
 .load-more {
   margin: 0 auto 20px;

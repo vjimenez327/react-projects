@@ -41,11 +41,11 @@ export default function LoadMoreData(){
 
   return (
     <div className="load-more-container">
-      <div className="product-container">
+      <div className="product-container-grid">
       {
         products && products.length ? 
           products.map((product, index) => (
-            <div key={index} className="product"> 
+            <div key={index} className="product-thing"> 
               <img src={product.thumbnail} />
               <p>{product.title}</p>
             </div>

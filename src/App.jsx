@@ -10,6 +10,7 @@ import TreeView from './components/TreeView'
 import menus from './components/TreeView/data'
 import LightDarkMode from './components/LightDarkMode'
 import ScrollIndicator from './components/ScrollIndicator'
+import Products from './components/ProductsDisplay'
 
 function App() {
 
@@ -27,8 +28,9 @@ function App() {
           <TreeView menus={menus}/>
           <LightDarkMode />
           <ScrollIndicator url={'https://dummyjson.com/products?limit=100'} />
+          <SearchAutocomplete />
         */}
-        <SearchAutocomplete />
+        <Products />
       </div>
     </>
   )

@@ -1,70 +1,83 @@
 import { useEffect, useState } from "react";
+const URL = 'https://dummyjson.com/users';
+
+
 
 
 export default function SearchAutocomplete(){
-  const [loading, setLoading] = useState(false);
-  const [users, setUsers] = useState([]);
-  const [searchParam, setSearchParam] = useState('');
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [loading, setLoading] = useState(false)
+  const [users, setUsers] = useState([])
+  const [search, setSearch] = useState('')
+  const [showDropdown, setShowShowDropdown] = useState(false);
   const [filteredUsers, setFilteredUsers] = useState([])
-
-
-function handleChange(event){
-  const query = event.target.value.toLowerCase()
-  setSearchParam(query)
-
-  if(query.length > 1){
-    const filteredData = users && users.length ? 
-    users.filter(item => item.toLowerCase().indexOf(query) > -1)
-    : [];
-
-    setFilteredUsers(filteredData);
-    setShowDropdown(true)
-  } else {
-    setShowDropdown(false)
-  }
-}
+  
 
   async function fetchUsers(){
     try {
       setLoading(true)
-      const response = await fetch('https://dummyjson.com/users');
-      const { users } = await response.json() || [];
+      const response = await fetch(URL);
+      const data = await response.json();
 
-      if(users && users.length){
-        setUsers(users.map(user => user.firstName));
+      if(data && data.users.length) {
+        setUsers(data.users.map(user => user.firstName))
         setLoading(false)
       }
-    } catch (e) {
-      console.error(e)
-      setLoading(false)
+    } catch(e) {
+        console.log(e)
+        setLoading(false) }
+  }
+
+  function handleInput(e) {
+    const query = e.target.value.toLowerCase()
+    setSearch(query)
+
+    if(query.length > 1) {
+      const filteredUsers = users.filter(u => u.toLowerCase().indexOf(query) > -1)
+
+      setFilteredUsers(filteredUsers)
+      setShowShowDropdown(true)
+    } else{
+      setShowShowDropdown(false)
     }
   }
 
+  function handleUser(e){
+    let userInfo = e.target.innerText;
+    setShowShowDropdown(false)
+    setSearch(userInfo)
+
+  }
+
+  console.log(filteredUsers)
   useEffect(() => {
     fetchUsers();
   }, [])
 
-  if(loading){
+  if(loading) {
     return <div>Loading....</div>
-  } 
-  
-  console.log(users, filteredUsers)
+  }
 
-  return (
-    <div className="search-autocomplete-container">
+  return(
+    <div>
+      <div>Try the Search Autocomplete </div>
       <input 
-      name="search-users"
-      placeholder="Search Users here..."
-      value={searchParam}
-      onChange={handleChange}
+      type="text"
+      placeholder="Search for User"
+      value={search}
+      onChange={handleInput}
       />
+        {
 
-      {
-        showDropdown ? filteredUsers.map((user, i) => <p key={i}>{user}</p>) : null
-      }
-      
+          showDropdown ? 
+
+          filteredUsers.map((user, i) => <div key={i} onClick={handleUser}>{user}</div>) :
+
+          users && users.length ?
+          users.map((user, i) => <p key={i}>{user}</p>) 
+          // users
+        : null
+        } 
     
-      </div>
+    </div>
   )
 }
