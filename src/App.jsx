@@ -11,6 +11,8 @@ import menus from './components/TreeView/data';
 import QRCodeGenerator from './components/QRGenerator'; 
 import LightDarkMode from './components/LightDarkMode'
 import ScrollIndicator from './components/ScrollIndicator'
+import FeatureFlagGlobalState from './components/FeatureFlag/context'
+import FeatureFlags from './components/FeatureFlag'
 
 function App() {
 
@@ -28,8 +30,11 @@ function App() {
           <TreeView menus={menus}/>
         <QRCodeGenerator />
           <LightDarkMode />
+          <ScrollIndicator url={'https://dummyjson.com/products?limit=100'} />
         */}
-        <ScrollIndicator url={'https://dummyjson.com/products?limit=100'} />
+        <FeatureFlagGlobalState>
+          <FeatureFlags />
+        </FeatureFlagGlobalState>
       </div>
     </>
   )
