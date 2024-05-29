@@ -10,6 +10,8 @@ import TreeView from './components/TreeView'
 import menus from './components/TreeView/data'
 import LightDarkMode from './components/LightDarkMode'
 import ScrollIndicator from './components/ScrollIndicator'
+import FeatureFlagGlobalState from './components/FeatureFlag/context'
+import FeatureFlags from './components/FeatureFlag'
 
 function App() {
 
@@ -26,8 +28,11 @@ function App() {
           <LoadMoreData />
           <TreeView menus={menus}/>
           <LightDarkMode />
+          <ScrollIndicator url={'https://dummyjson.com/products?limit=100'} />
         */}
-        <ScrollIndicator url={'https://dummyjson.com/products?limit=100'} />
+        <FeatureFlagGlobalState>
+          <FeatureFlags />
+        </FeatureFlagGlobalState>
       </div>
     </>
   )
