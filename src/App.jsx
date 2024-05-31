@@ -13,6 +13,7 @@ import LightDarkMode from './components/LightDarkMode'
 import ScrollIndicator from './components/ScrollIndicator'
 import FeatureFlagGlobalState from './components/FeatureFlag/context'
 import FeatureFlags from './components/FeatureFlag'
+import TicTacToe from './components/TicTacToe';
 
 function App() {
 
@@ -28,11 +29,11 @@ function App() {
         <QRCodeGenerator />
           <LightDarkMode />
           <ScrollIndicator url={'https://dummyjson.com/products?limit=100'} />
-          <SearchAutocomplete />
-        */}
-        <FeatureFlagGlobalState>
+          <FeatureFlagGlobalState>
           <FeatureFlags />
-        </FeatureFlagGlobalState>
+          </FeatureFlagGlobalState>
+        */}
+        <TicTacToe />
       </div>
     </>
   )
