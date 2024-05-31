@@ -1,0 +1,38 @@
+.products-title{
+  /* text-align: center; */
+  margin: 10px auto;
+}
+
+.product-container{
+  display: flex;
+  flex-direction: column;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.product-column {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.images-row-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.product-meta {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image-display {
+  width: 250px;
+  height: 175px;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+}
